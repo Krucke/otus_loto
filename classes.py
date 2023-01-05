@@ -49,6 +49,7 @@ def check_for_player_win(game, player) -> bool:
 class Cartochka():
 
     def __init__(self, cart, name_cart) -> None:
+        print('cart on init')
         self.cart = cart
         self.name_cart = name_cart
 
@@ -78,10 +79,10 @@ class Cartochka():
 
 class Player():
 
-    def __init__(self, name, is_pc=False):
+    def __init__(self, name, cart=[], is_pc=False):
         self.name = name
         self.is_pc = is_pc
-        self.cart = Cartochka(create_cart(), self.name)
+        self.cart = Cartochka(create_cart(), name) if not cart else Cartochka(cart, name)
 
 
 class Meshok():

@@ -17,7 +17,7 @@ def main():
     if type_game_input == 1:
         username = input('Пожалуйста, введите Ваше имя\n')
         players.append(Player(username))
-        players.append(Player('Компьютер 1', True))
+        players.append(Player('Компьютер 1', [], True))
     if type_game_input == 2:
         count_of_players_input = int(input('Пожалуйста, укажите количество игроков (максимум 4)\n'))
         if count_of_players_input > 4 or count_of_players_input <= 0:
@@ -28,8 +28,8 @@ def main():
             players.append(Player(username))
 
     if type_game_input == 3:
-        players.append(Player('Компьютер 1', True))
-        players.append(Player('Компьютер 2', True))
+        players.append(Player('Компьютер 1', [], True))
+        players.append(Player('Компьютер 2', [], True))
 
     game = Game(type_game_input, players)
 
